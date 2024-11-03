@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "soap.marshaller.context-path",
+    "type": "java.lang.String",
+    "description": "A description for 'soap.marshaller.context-path'"
+  },
+  {
+    "name": "soap.client.default-uri",
+    "type": "java.lang.String",
+    "description": "A description for 'soap.client.default-uri'"
+  },
+  {
+    "name": "soap.client.action-callback",
+    "type": "java.lang.String",
+    "description": "A description for 'soap.client.action-callback'"
+  }
+]}
