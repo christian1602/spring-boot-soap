@@ -102,27 +102,30 @@
 					</configuration>
 				</plugin>-->
 		
-		<!--Nuevo plugin-->
+		<!--Unico nuevo plugin-->
 		<pluginManagement>
 			<plugins>
 				<!-- tag::wsdl[] -->
 				<plugin>
 					<groupId>com.sun.xml.ws</groupId>
-					<artifactId>jaxws-maven-plugin</artifactId>
-					<version>3.0.0</version>
-					<executions>
-						<execution>
-							<goals>
-								<goal>wsimport</goal>
-							</goals>
-						</execution>
-					</executions>
+						<artifactId>jaxws-maven-plugin</artifactId>
+						<version>3.0.0</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>wsimport</goal>
+								</goals>
+							</execution>
+						</executions>
 					<configuration>
+						<!-- Define el nombre del paquete donde se generaran las clases -->
 						<packageName>com.christian.soap.wsdl</packageName>
 						<wsdlUrls>
 							<wsdlUrl>http://www.dneonline.com/calculator.asmx?WSDL</wsdlUrl>
 						</wsdlUrls>
-						<sourceDestDir>${basedir}/src/main/java</sourceDestDir>
+						<!--sourcesDir por defecto es target/generated-sources/wsimport-->
+						<sourceDestDir>${sourcesDir}</sourceDestDir>
+						<!--classesDir por defecto es target/classes-->
 						<destDir>${classesDir}</destDir>
 						<extension>true</extension>
 					</configuration>
