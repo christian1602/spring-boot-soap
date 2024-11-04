@@ -14,10 +14,10 @@ import com.christian.soap.service.ISoapClientService;
 @RequestMapping("/soap")
 public class SoapController {
 
-	// COMO EL BEAN SoapClientServiceImpl YA EXISTE (FUE CREADO EN SoapConfig) ENTONCES SOLO LO INYECTAMOS
-	// SI QUEREMOS USAR OTRO NOMBRE, EL IDE NOS DARA EL SIGUIENTE MENSAJE:
-	// Considere marcar uno de los beans como @Primary, actualizar el consumidor para que acepte múltiples beans, o 
-	// utilizar @Qualifier para identificar el bean que debe ser consumido
+	// EN ESTE PUNTO TENEMOS 2 IMPLEMENTACIONES DE ISoapClientService
+	// 1. EL BEAN soapClient CREADO EN SoapConfig
+	// 2. EL BEAN SoapClientServiceImpl CREADO COMO UN @Service
+	// DEBIDO A QUE soapClient CREADO EN SoapConfig TIENE LA ANOTACION @Primary SERA ELEGIDO
 	private final ISoapClientService soapClientService;
 
 	public SoapController(ISoapClientService soapClientService) {
